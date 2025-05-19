@@ -32,11 +32,6 @@ class ProductListAPIView2(GenericAPIView):
         serializer = self.serializer_class(self.get_queryset(), many=True)
         return Response(serializer.data)
     
-    # def get_queryset(self):
-    #     queryset = Product.objects.filter(is_active=True)
-    #     return queryset
-
-
 class ProductListAPIView3(ListCreateAPIView):
     queryset = Product.objects.filter(is_active=True)
     serializer_class = ProductListSerializer

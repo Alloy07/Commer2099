@@ -1,7 +1,7 @@
 from rest_framework.generics import DestroyAPIView
 
 from products.models import Category
-from products.api_endpoints.CatergoryDelete.serializers import CategoryDeleteSerializer
+from products.api_endpoints.CategoryDelete.serializers import CategoryDeleteSerializer
 
 
 class CategoryDeleteAPIView(DestroyAPIView):

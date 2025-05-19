@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 
 from products.models import Category
-from products.api_endpoints.CatergoryList.serializers import (
+from products.api_endpoints.CategoryList.serializers import (
     CategoryListSerializer
 )  
 

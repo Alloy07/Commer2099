@@ -61,3 +61,10 @@ class Color(BaseModel):
 
     def __str__(self):
         return self.name
+    
+class MediaFile(BaseModel):
+    name = models.CharField(max_length=255, null=False, blank=False)
+    slug = models.SlugField(null=False, blank=False, unique=True)
+
+    def __str__(self):
+        return self.name

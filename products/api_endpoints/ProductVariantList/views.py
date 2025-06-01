@@ -5,11 +5,6 @@ from rest_framework.response import Response
 from products.models import ProductVariant
 from products.api_endpoints.ProductVariantList.serializers import ProductVariantListSerializer
 
-
-
-
- 
-
 class ProductVariantListAPIView(ListAPIView):
     queryset = ProductVariant.objects.all()
     serializer_class = ProductVariantListSerializer

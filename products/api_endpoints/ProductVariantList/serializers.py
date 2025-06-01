@@ -4,6 +4,6 @@ from rest_framework import serializers
 class ProductVariantListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductVariant
-        fields = ("id", "name", "slug")
+        fields = ("id", "name")
 
 

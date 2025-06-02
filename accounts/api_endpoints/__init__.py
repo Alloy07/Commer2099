@@ -4,3 +4,4 @@ from .CartItemCreate import *
 from .CartItemList import *
 from .CartItemUpdate import *
 from .CartItemDelete import *
+from .Profile import *

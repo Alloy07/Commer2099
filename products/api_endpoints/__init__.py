@@ -4,3 +4,4 @@ from .Product import *
 from .Size import *
 from .Color import *
 from .Review import *
+from .History import *

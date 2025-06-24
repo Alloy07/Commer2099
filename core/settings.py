@@ -60,9 +60,13 @@ EXTERNAL_APPS = [
     'drf_yasg',
     'jazzmin',
     'crispy_forms',
-    "crispy_bootstrap4",
+    "crispy_bootstrap5",
     "rosetta",
+    "modeltranslation",
+    "django_celery_beat",
 ]
+
+
 
 INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
 
@@ -308,3 +312,14 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = [BASE_DIR / "locale"]
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake', # Can be any string to identify this cache instance
+    }
+}
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

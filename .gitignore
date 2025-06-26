@@ -173,4 +173,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+
+# PyPI configuration file
 media
+locale

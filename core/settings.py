@@ -73,12 +73,12 @@ INSTALLED_APPS = LOCAL_APPS + EXTERNAL_APPS + DJANGO_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -239,14 +239,7 @@ JAZZMIN_SETTINGS = {
     "navigation_expanded": False,
     "hide_apps": [],
     "hide_models": [],
-    "custom_links": {
-        "books": [{
-            "name": "Make Messages", 
-            "url": "make_messages", 
-            "icon": "fas fa-comments",
-            "permissions": ["books.view_book"]
-        }]
-    },
+    "custom_links": {},
     "icons": {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
@@ -268,9 +261,9 @@ JAZZMIN_SETTINGS = {
     "use_google_fonts_cdn": True,
     "show_ui_builder": True,
 
-    "changeform_format": "carousel",
+    "changeform_format": "horizontal_tabs",
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
-    # "language_chooser": True,
+    "language_chooser": True,
 }
 
 # Crispy Forms
@@ -311,6 +304,11 @@ LANGUAGES = [
     ("ru", _("Russian"))
 ]
 
+
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+
 LOCALE_PATHS = [BASE_DIR / "locale"]
 
 
@@ -323,3 +321,8 @@ CACHES = {
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+#  CELERY settings
+
+CELERY_BROKER_URL ='redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
